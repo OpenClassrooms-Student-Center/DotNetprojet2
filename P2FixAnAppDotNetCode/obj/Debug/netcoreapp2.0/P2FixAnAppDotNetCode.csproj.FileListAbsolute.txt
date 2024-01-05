@@ -40,3 +40,44 @@
 /Users/marc/Documents/Cours/OCR/DotNetprojet2-main/P2FixAnAppDotNetCode/obj/Debug/netcoreapp2.0/en/P2FixAnAppDotNetCode.resources.dll
 /Users/marc/Documents/Cours/OCR/DotNetprojet2-main/P2FixAnAppDotNetCode/obj/Debug/netcoreapp2.0/fr/P2FixAnAppDotNetCode.resources.cs
 /Users/marc/Documents/Cours/OCR/DotNetprojet2-main/P2FixAnAppDotNetCode/obj/Debug/netcoreapp2.0/fr/P2FixAnAppDotNetCode.resources.dll
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\bin\Debug\netcoreapp2.0\appsettings.Development.json
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\bin\Debug\netcoreapp2.0\appsettings.json
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\bin\Debug\netcoreapp2.0\bower.json
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\bin\Debug\netcoreapp2.0\bundleconfig.json
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\bin\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.deps.json
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\bin\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.runtimeconfig.json
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\bin\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.runtimeconfig.dev.json
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\bin\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.dll
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\bin\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.pdb
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\bin\Debug\netcoreapp2.0\en\P2FixAnAppDotNetCode.resources.dll
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\bin\Debug\netcoreapp2.0\fr\P2FixAnAppDotNetCode.resources.dll
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.csproj.AssemblyReference.cache
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Controllers.OrderController.en.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Controllers.OrderController.fr.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Models.Order.fr.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Models.ViewModels.LanguageViewModel.en.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Models.ViewModels.LanguageViewModel.fr.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Models.ViewModels.Order.en.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Cart.Index.en.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Cart.Index.fr.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Order.Completed.en.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Order.Completed.fr.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Order.Index.en.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Order.Index.fr.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Product.Index.en.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Product.Index.fr.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Shared.Components.CartSummary.Default.en.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Shared.Components.CartSummary.Default.fr.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Shared.Components.LanguageSelector.Default.en.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Shared.Components.LanguageSelector.Default.fr.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.csproj.GenerateResource.cache
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.GeneratedMSBuildEditorConfig.editorconfig
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.AssemblyInfoInputs.cache
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.AssemblyInfo.cs
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.csproj.CoreCompileInputs.cache
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\en\P2FixAnAppDotNetCode.resources.dll
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\fr\P2FixAnAppDotNetCode.resources.dll
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.dll
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.pdb
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.genruntimeconfig.cache
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.sourcelink.json
