@@ -1,9 +1,12 @@
 ﻿@model P2FixAnAppDotNetCode.Models.Cart
-
 <h2>@Localizer["YourCart"]</h2>
+@{
+    ViewData["Title"] = Localizer["Votre panier"];
+}
+
 <table class="table table-bordered table-striped">
     <thead>
-        <tr>
+        <tr
             <th>@Localizer["Quantity"]</th>
             <th>@Localizer["Item"]</th>
             <th class="text-right">@Localizer["Price"]</th>
