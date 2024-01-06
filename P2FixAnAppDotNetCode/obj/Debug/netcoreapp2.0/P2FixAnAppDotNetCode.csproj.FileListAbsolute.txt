@@ -122,3 +122,13 @@ D:\OpenClassrooms\2. Déboguez une application .NET\App\DotNetprojet2\P2FixAnApp
 D:\OpenClassrooms\2. Déboguez une application .NET\App\DotNetprojet2\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.dll
 D:\OpenClassrooms\2. Déboguez une application .NET\App\DotNetprojet2\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.pdb
 D:\OpenClassrooms\2. Déboguez une application .NET\App\DotNetprojet2\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.genruntimeconfig.cache
+D:\OpenClassrooms\2. Déboguez une application .NET\App\DotNetprojet2\P2FixAnAppDotNetCode\bin\Debug\netcoreapp2.0\es\P2FixAnAppDotNetCode.resources.dll
+D:\OpenClassrooms\2. Déboguez une application .NET\App\DotNetprojet2\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Controllers.OrderController.es.resources
+D:\OpenClassrooms\2. Déboguez une application .NET\App\DotNetprojet2\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Models.ViewModels.LanguageViewModel.es.resources
+D:\OpenClassrooms\2. Déboguez une application .NET\App\DotNetprojet2\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\es\P2FixAnAppDotNetCode.resources.dll
+D:\OpenClassrooms\2. Déboguez une application .NET\App\DotNetprojet2\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Cart.Index.es.resources
+D:\OpenClassrooms\2. Déboguez une application .NET\App\DotNetprojet2\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Order.Completed.es.resources
+D:\OpenClassrooms\2. Déboguez une application .NET\App\DotNetprojet2\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Order.Index.es.resources
+D:\OpenClassrooms\2. Déboguez une application .NET\App\DotNetprojet2\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Product.Index.es.resources
+D:\OpenClassrooms\2. Déboguez une application .NET\App\DotNetprojet2\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Shared.Components.CartSummary.Default.es.resources
+D:\OpenClassrooms\2. Déboguez une application .NET\App\DotNetprojet2\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Shared.Components.LanguageSelector.Default.es.resources
