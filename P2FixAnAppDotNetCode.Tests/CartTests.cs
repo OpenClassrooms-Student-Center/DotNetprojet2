@@ -22,9 +22,9 @@ namespace P2FixAnAppDotNetCode.Tests
             cart.AddItem(product1, 1);
             cart.AddItem(product2, 1);
 
-            Assert.NotEmpty(cart.Lines);
-            Assert.Single(cart.Lines);
-            Assert.Equal(2, cart.Lines.First().Quantity);
+            Assert.NotEmpty(cart.Lines); //Vérifie que la liste des lignes n'est pas vide
+            Assert.Single(cart.Lines); //Vérifie qu'il n'y a qu'une seule ligne
+            Assert.Equal(2, cart.Lines.First().Quantity); //Vérifie la quantité de la ligne est bien la somme des deux ajouts ci-dessus
         }
 
         [Fact]
@@ -71,7 +71,7 @@ namespace P2FixAnAppDotNetCode.Tests
             cart.AddItem(product, 1);
             Product result = cart.FindProductInCartLines(999);
 
-            Assert.NotNull(result);
+            Assert.NotNull(result); //Vérifie que le produit existe
         }
     }
 }
