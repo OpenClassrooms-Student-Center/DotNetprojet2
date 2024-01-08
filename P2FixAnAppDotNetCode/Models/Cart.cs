@@ -13,13 +13,16 @@ namespace P2FixAnAppDotNetCode.Models
         /// </summary>
         public IEnumerable<CartLine> Lines => GetCartLineList();
 
+        private List<CartLine> _lines = new List<CartLine>();
+
         /// <summary>
         /// Return the actual cartline list
         /// </summary>
         /// <returns></returns>
         private List<CartLine> GetCartLineList()
         {
-            return new List<CartLine>();
+            //Retourne la liste actuelle de cartline (auparavant retournait une nouvelle liste de CartLine à chaque appel...)
+            return _lines;
         }
 
         /// <summary>
@@ -27,7 +30,16 @@ namespace P2FixAnAppDotNetCode.Models
         /// </summary>//
         public void AddItem(Product product, int quantity)
         {
-            // TODO implement the method
+            var line = _lines.FirstOrDefault(l => l.Product.Id == product.Id);
+
+            if (line == null)
+            {
+                _lines.Add(new CartLine { Product = product, Quantity = quantity });
+            }
+            else
+            {
+                line.Quantity += quantity;
+            }
         }
 
         /// <summary>
@@ -41,8 +53,12 @@ namespace P2FixAnAppDotNetCode.Models
         /// </summary>
         public double GetTotalValue()
         {
-            // TODO implement the method
-            return 0.0;
+            double total = 0.0;
+            for (int i = 0; i < _lines.Count; i++)
+            {
+                total += _lines[i].Product.Price * _lines[i].Quantity;
+            }
+            return total;
         }
 
         /// <summary>
@@ -50,8 +66,26 @@ namespace P2FixAnAppDotNetCode.Models
         /// </summary>
         public double GetAverageValue()
         {
-            // TODO implement the method
-            return 0.0;
+            double moyenne = 0.0;
+            int nombreProduits = 0;
+            double total = GetTotalValue();
+            //Calcul du nombre de produits
+            for (int i = 0; i < _lines.Count; i++)
+            {
+                nombreProduits += _lines[i].Quantity;
+            }
+
+            //On évite la division par 0
+            if (nombreProduits != 0)
+            {
+                //Calcul de la moyenne
+                moyenne = total / nombreProduits;
+                return moyenne;
+            }
+            else
+            {
+                return 0.0;
+            }
         }
 
         /// <summary>
@@ -59,7 +93,15 @@ namespace P2FixAnAppDotNetCode.Models
         /// </summary>
         public Product FindProductInCartLines(int productId)
         {
-            // TODO implement the method
+            CartLine FDICLline = null; // Déclare la variable pour stocker le résultat de la recherche
+            foreach (var line in _lines)
+            {
+                if (line.Product.Id == productId)
+                {
+                    FDICLline = line; // Stocke l'élément correspondant dans FDICLline
+                    return FDICLline.Product;
+                }
+            }
             return null;
         }
 
