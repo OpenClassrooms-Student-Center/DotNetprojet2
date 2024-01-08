@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace P2FixAnAppDotNetCode.Models
@@ -66,7 +67,6 @@ namespace P2FixAnAppDotNetCode.Models
         /// </summary>
         public double GetAverageValue()
         {
-            double moyenne = 0.0;
             int nombreProduits = 0;
             double total = GetTotalValue();
             //Calcul du nombre de produits
@@ -79,7 +79,7 @@ namespace P2FixAnAppDotNetCode.Models
             if (nombreProduits != 0)
             {
                 //Calcul de la moyenne
-                moyenne = total / nombreProduits;
+                double moyenne = total / nombreProduits;
                 return moyenne;
             }
             else
@@ -93,12 +93,11 @@ namespace P2FixAnAppDotNetCode.Models
         /// </summary>
         public Product FindProductInCartLines(int productId)
         {
-            CartLine FDICLline = null; // Déclare la variable pour stocker le résultat de la recherche
             foreach (var line in _lines)
             {
                 if (line.Product.Id == productId)
                 {
-                    FDICLline = line; // Stocke l'élément correspondant dans FDICLline
+                    CartLine FDICLline = line;
                     return FDICLline.Product;
                 }
             }

@@ -1,4 +1,9 @@
-﻿using P2FixAnAppDotNetCode.Models.Repositories;
+﻿using System.Collections.Generic;
+using System.Security.Cryptography;
+using P2FixAnAppDotNetCode.Models.Repositories;
+using P2FixAnAppDotNetCode.Models;
+using System;
+
 
 namespace P2FixAnAppDotNetCode.Models.Services
 {
@@ -19,10 +24,8 @@ namespace P2FixAnAppDotNetCode.Models.Services
         /// <summary>
         /// Get all product from the inventory
         /// </summary>
-        public Product[] GetAllProducts()
+        public List<Product> GetAllProducts()
         {
-            // TODO change the return type from array to List<T> and propagate the change
-            // thoughout the application
             return _productRepository.GetAllProducts();
         }
 
@@ -31,8 +34,9 @@ namespace P2FixAnAppDotNetCode.Models.Services
         /// </summary>
         public Product GetProductById(int id)
         {
-            // TODO implement the method
-            return null;
+            List <Product> products = _productRepository.GetAllProducts();
+            Product product = products.Find(productGet => productGet.Id == id);
+            return product;
         }
 
         /// <summary>
@@ -40,8 +44,31 @@ namespace P2FixAnAppDotNetCode.Models.Services
         /// </summary>
         public void UpdateProductQuantities(Cart cart)
         {
-            // TODO implement the method
-            // update product inventory by using _productRepository.UpdateProductStocks() method.
+            try
+            {
+
+                if (cart != null)
+            { 
+                foreach (var cartLine in cart.Lines)
+                {
+                    int productId = cartLine.Product.Id;
+                    int quantityToRemove = cartLine.Quantity;
+                    Product product = GetProductById(productId);
+                    if (product != null && product.Stock >= quantityToRemove)
+                    {
+                        _productRepository.UpdateProductStocks(productId, quantityToRemove);
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("\nCart is null\n");  
+            }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erreur : " + ex.Message);
+            }
         }
     }
 }

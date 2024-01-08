@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using P2FixAnAppDotNetCode.Models;
 using P2FixAnAppDotNetCode.Models.Repositories;
@@ -22,8 +23,7 @@ namespace P2FixAnAppDotNetCode.Tests
 
             var products = productService.GetAllProducts();
 
-            //Assert.IsType<List<Product>>(products);
-            Assert.IsType<Product[]>(products);
+            Assert.IsType<List<Product>>(products);
 
         }
 
@@ -35,7 +35,7 @@ namespace P2FixAnAppDotNetCode.Tests
             IOrderRepository orderRepository = new OrderRepository();
             IProductService productService = new ProductService(productRepository, orderRepository);
 
-            IEnumerable<Product> products = productService.GetAllProducts();
+            List<Product> products = productService.GetAllProducts();
             cart.AddItem(products.Where(p => p.Id == 1).First(), 1);
             cart.AddItem(products.Where(p => p.Id == 3).First(), 2);
             cart.AddItem(products.Where(p => p.Id == 5).First(), 3);
@@ -74,6 +74,12 @@ namespace P2FixAnAppDotNetCode.Tests
 
             Assert.Same("JVC HAFX8R Headphone", product.Name);
             Assert.Equal(69.99, product.Price);
+
+            //Test : Cas où l'article n'existe pas alors la méthode doit renvoyer null
+            int nonProduitId = -1;
+            Product nonProduit = productService.GetProductById(nonProduitId);
+            Assert.Null(nonProduit);
+
         }
     }
 }
