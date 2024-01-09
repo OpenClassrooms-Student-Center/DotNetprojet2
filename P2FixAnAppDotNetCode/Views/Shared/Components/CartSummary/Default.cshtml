@@ -7,7 +7,7 @@
     {
         <small class="navbar-text">
             <b>@Localizer["YourCart"]:</b>
-            @Model.Lines.Sum(x => x.Quantity) item(s)
+            @Model.Lines.Sum(x => x.Quantity) @Localizer["item"]
             @Model.GetTotalValue().ToString("c")
         </small>
     }

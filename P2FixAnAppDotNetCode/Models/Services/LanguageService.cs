@@ -23,7 +23,7 @@ namespace P2FixAnAppDotNetCode.Models.Services
         /// </summary>
         public string SetCulture(string language)
         {
-            string culture = "";
+            string culture = "en";
             switch (language)
             {
                 case "French":
