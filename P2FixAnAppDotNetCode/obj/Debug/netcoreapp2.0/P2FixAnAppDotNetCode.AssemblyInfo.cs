@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("P2FixAnAppDotNetCode")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1b1389188dbae6fede12b547e150b456924adeb8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a93afd18f6b9563faa83d0e7460a014244a9af53")]
 [assembly: System.Reflection.AssemblyProductAttribute("P2FixAnAppDotNetCode")]
 [assembly: System.Reflection.AssemblyTitleAttribute("P2FixAnAppDotNetCode")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

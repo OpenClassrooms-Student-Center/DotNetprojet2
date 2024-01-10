@@ -203,7 +203,6 @@ D:\OpenClassrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj
 D:\OpenClassrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Models.ViewModels.LanguageViewModel.en.resources
 D:\OpenClassrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Models.ViewModels.LanguageViewModel.es.resources
 D:\OpenClassrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Models.ViewModels.LanguageViewModel.fr.resources
-D:\OpenClassrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Models.ViewModels.Order.en.resources
 D:\OpenClassrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Cart.Index.en.resources
 D:\OpenClassrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Cart.Index.es.resources
 D:\OpenClassrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Cart.Index.fr.resources
@@ -234,3 +233,5 @@ D:\OpenClassrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj
 D:\OpenClassrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.dll
 D:\OpenClassrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.pdb
 D:\OpenClassrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.genruntimeconfig.cache
+D:\OpenClassrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Models.Order.en.resources
+D:\OpenClassrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Models.Order.es.resources

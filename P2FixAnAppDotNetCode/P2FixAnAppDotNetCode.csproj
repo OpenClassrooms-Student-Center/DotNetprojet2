@@ -28,7 +28,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Remove="Resources\Models\Order.en.resx" />
     <EmbeddedResource Remove="Resources\Models\ViewModels\Order.es.resx" />
   </ItemGroup>
 
@@ -37,13 +36,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Resources\Models\ViewModels\Order.es.resx" />
-    <None Include="Resources\Models\ViewModels\Order.en.resx" />
+    <None Include="Resources\Models\Order.en.resx" />
+    <None Include="Resources\Models\Order.es.resx" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
     <PackageReference Include="Microsoft.Extensions.Localization" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Controllers\OrderController.es.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Controllers\OrderController.en.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

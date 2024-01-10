@@ -35,16 +35,34 @@ namespace P2FixAnAppDotNetCode.Models
 
             if (line == null)
             {
-                _lines.Add(new CartLine { Product = product, Quantity = quantity });
+                // Cas où le produit n'est pas encore dans le panier.
+                if (product.Stock > 0)
+                {
+                    int addQuantity = Math.Min(product.Stock, quantity);
+                    _lines.Add(new CartLine { Product = product, Quantity = addQuantity });
+                }
+                else
+                {
+                    // Stock est égal à 0, retourner une erreur.
+                }
             }
             else
             {
-                line.Quantity += quantity;
+                // Cas où le produit est déjà dans le panier.
+                if (product.Stock - line.Quantity > 0)
+                {
+                    int addQuantity = Math.Min(product.Stock - line.Quantity, quantity);
+                    line.Quantity += addQuantity;
+                }
+                else
+                {
+                    // Stock existant insuffisant pour augmenter la quantité.
+                }
             }
         }
 
         /// <summary>
-        /// Removes a product form the cart
+        /// Removes a product from the cart
         /// </summary>
         public void RemoveLine(Product product) =>
             GetCartLineList().RemoveAll(l => l.Product.Id == product.Id);

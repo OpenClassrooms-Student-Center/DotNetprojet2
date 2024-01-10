@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using P2FixAnAppDotNetCode.Models;
@@ -26,13 +27,18 @@ namespace P2FixAnAppDotNetCode.Controllers
         {
             if (!((Cart) _cart).Lines.Any())
             {
+
                 ModelState.AddModelError("", _localizer["CartEmpty"]);
             }
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && ((Cart)_cart).Lines.Any())
             {
                 order.Lines = (_cart as Cart)?.Lines.ToArray();
                 _orderService.SaveOrder(order);
                 return RedirectToAction(nameof(Completed));
+            }
+            if (!ModelState.IsValid && ((Cart)_cart).Lines.Any())
+            {
+                return View(order);
             }
             else
             {

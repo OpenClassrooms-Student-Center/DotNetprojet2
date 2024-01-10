@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Adress" xml:space="preserve">
+  <data name="Address" xml:space="preserve">
     <value>Adresse</value>
   </data>
   <data name="City" xml:space="preserve">
@@ -130,7 +130,7 @@
     <value>Pays</value>
   </data>
   <data name="EnterDetails" xml:space="preserve">
-    <value>Et on s'occupe de votre commande tout de suite !</value>
+    <value>Entrez les détails et on s'occupe de votre commande tout de suite !</value>
   </data>
   <data name="Location" xml:space="preserve">
     <value>Localisation</value>
