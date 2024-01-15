@@ -57,7 +57,6 @@ J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\ob
 J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Models.Order.fr.resources
 J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Models.ViewModels.LanguageViewModel.en.resources
 J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Models.ViewModels.LanguageViewModel.fr.resources
-J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Models.ViewModels.Order.en.resources
 J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Cart.Index.en.resources
 J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Cart.Index.fr.resources
 J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Order.Completed.en.resources
@@ -235,3 +234,15 @@ D:\OpenClassrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj
 D:\OpenClassrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.genruntimeconfig.cache
 D:\OpenClassrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Models.Order.en.resources
 D:\OpenClassrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Models.Order.es.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\bin\Debug\netcoreapp2.0\es\P2FixAnAppDotNetCode.resources.dll
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Controllers.OrderController.es.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Models.Order.en.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Models.Order.es.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Models.ViewModels.LanguageViewModel.es.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Cart.Index.es.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Order.Completed.es.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Order.Index.es.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Product.Index.es.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Shared.Components.CartSummary.Default.es.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\P2FixAnAppDotNetCode.Resources.Views.Shared.Components.LanguageSelector.Default.es.resources
+J:\Open Classrooms\2. Déboguez une application .NET\App\P2FixAnAppDotNetCode\obj\Debug\netcoreapp2.0\es\P2FixAnAppDotNetCode.resources.dll

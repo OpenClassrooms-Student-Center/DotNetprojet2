@@ -20,7 +20,6 @@ namespace P2FixAnAppDotNetCode.Tests
         private Mock<ICart> _mockCart;
         private Mock<IOrderService> _mockOrderService;
         private Mock<IStringLocalizer<OrderController>> _mockLocalizer;
-        private Mock<Order> _mockOrder;
         private OrderController _controller;
 
         public OrderControllerTests()
@@ -72,6 +71,7 @@ namespace P2FixAnAppDotNetCode.Tests
 
             // Act
             var result = _controller.Index(order) as ViewResult;
+
             // Assert
             Assert.True(_controller.ModelState.IsValid, "Not Empty Cart and Model is Valid");
         }

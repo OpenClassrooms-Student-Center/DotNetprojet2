@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\OpenClassrooms\\2. Déboguez une application .NET\\App\\P2FixAnAppDotNetCode\\P2FixAnAppDotNetCode.csproj": {}
+    "J:\\Open Classrooms\\2. Déboguez une application .NET\\App\\P2FixAnAppDotNetCode\\P2FixAnAppDotNetCode.csproj": {}
   },
   "projects": {
-    "D:\\OpenClassrooms\\2. Déboguez une application .NET\\App\\P2FixAnAppDotNetCode\\P2FixAnAppDotNetCode.csproj": {
+    "J:\\Open Classrooms\\2. Déboguez une application .NET\\App\\P2FixAnAppDotNetCode\\P2FixAnAppDotNetCode.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\OpenClassrooms\\2. Déboguez une application .NET\\App\\P2FixAnAppDotNetCode\\P2FixAnAppDotNetCode.csproj",
+        "projectUniqueName": "J:\\Open Classrooms\\2. Déboguez une application .NET\\App\\P2FixAnAppDotNetCode\\P2FixAnAppDotNetCode.csproj",
         "projectName": "P2FixAnAppDotNetCode",
-        "projectPath": "D:\\OpenClassrooms\\2. Déboguez une application .NET\\App\\P2FixAnAppDotNetCode\\P2FixAnAppDotNetCode.csproj",
-        "packagesPath": "C:\\Users\\Antoine\\.nuget\\packages\\",
-        "outputPath": "D:\\OpenClassrooms\\2. Déboguez une application .NET\\App\\P2FixAnAppDotNetCode\\obj\\",
+        "projectPath": "J:\\Open Classrooms\\2. Déboguez une application .NET\\App\\P2FixAnAppDotNetCode\\P2FixAnAppDotNetCode.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "J:\\Open Classrooms\\2. Déboguez une application .NET\\App\\P2FixAnAppDotNetCode\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Antoine\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using P2FixAnAppDotNetCode.Models;
 using P2FixAnAppDotNetCode.Models.Repositories;
 using P2FixAnAppDotNetCode.Models.Services;
+using P2FixAnAppDotNetCode.Models;
 using Xunit;
 
 namespace P2FixAnAppDotNetCode.Tests
@@ -127,15 +127,16 @@ namespace P2FixAnAppDotNetCode.Tests
         }
 
         [Fact]
-        public void FindProductInCartLines()
+        public void FindProductInCartLines_ProductExists_ProductReturned()
         {
             Cart cart = new Cart();
             Product product = new Product(999, 1, 20, "name", "description");
 
             cart.AddItem(product, 1);
-            Product result = cart.FindProductInCartLines(999);
+            CartLine result = cart.FindProductInCartLines(product.Id);
 
             Assert.NotNull(result); //Vérifie que le produit existe
+            Assert.Equal(product.Id, result.Product.Id); //Vérifie que le produit est bien le bon
         }
     }
 }

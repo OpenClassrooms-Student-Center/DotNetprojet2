@@ -4,6 +4,13 @@ using System.Linq;
 
 namespace P2FixAnAppDotNetCode.Models
 {
+    public class CartLine
+    {
+        public int OrderLineId { get; set; }
+        public Product Product { get; set; }
+        public int Quantity { get; set; }
+    }
+
     /// <summary>
     /// The Cart class
     /// </summary>
@@ -14,7 +21,7 @@ namespace P2FixAnAppDotNetCode.Models
         /// </summary>
         public IEnumerable<CartLine> Lines => GetCartLineList();
 
-        private List<CartLine> _lines = new List<CartLine>();
+        public List<CartLine> _lines = new List<CartLine>();
 
         /// <summary>
         /// Return the actual cartline list
@@ -31,7 +38,7 @@ namespace P2FixAnAppDotNetCode.Models
         /// </summary>//
         public void AddItem(Product product, int quantity)
         {
-            var line = _lines.FirstOrDefault(l => l.Product.Id == product.Id);
+            var line = FindProductInCartLines(product.Id);
 
             if (line == null)
             {
@@ -109,14 +116,14 @@ namespace P2FixAnAppDotNetCode.Models
         /// <summary>
         /// Looks after a given product in the cart and returns if it finds it
         /// </summary>
-        public Product FindProductInCartLines(int productId)
+        public CartLine FindProductInCartLines(int productId)
         {
-            foreach (var line in _lines)
+            foreach (CartLine line in _lines)
             {
                 if (line.Product.Id == productId)
                 {
-                    CartLine FDICLline = line;
-                    return FDICLline.Product;
+                    CartLine productLine = line;
+                    return productLine;
                 }
             }
             return null;
@@ -140,10 +147,4 @@ namespace P2FixAnAppDotNetCode.Models
         }
     }
 
-    public class CartLine
-    {
-        public int OrderLineId { get; set; }
-        public Product Product { get; set; }
-        public int Quantity { get; set; }
-    }
 }
