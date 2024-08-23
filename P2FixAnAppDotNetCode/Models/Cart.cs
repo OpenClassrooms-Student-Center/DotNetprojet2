@@ -22,7 +22,7 @@ namespace P2FixAnAppDotNetCode.Models
             _session = session ?? throw new ArgumentNullException(nameof(session));
             _cartLines = new List<CartLine>();
             _productService = productService ?? throw new ArgumentNullException(nameof(productService));
-            LoadCart(); // Charger le panier depuis la session si déjà existant
+            LoadCart();
         }
         public Cart() { }
         private void LoadCart()
@@ -34,12 +34,7 @@ namespace P2FixAnAppDotNetCode.Models
             }
         }
 
-        /// <summary>
-        /// Read-only property for display only
-        /// </summary>
-        //public IEnumerable<CartLine> Lines => GetCartLineList();
         public IEnumerable<CartLine> Lines => _cartLines;
-
 
         /// <summary>
         /// Adds a product in the cart or increment its quantity in the cart if already added
@@ -114,17 +109,31 @@ namespace P2FixAnAppDotNetCode.Models
         /// <summary>
         /// Clears a the cart of all added products
         /// </summary>
-     
-        public void Clear()
+
+        /*public void Clear()
         {
-            /*foreach (var line in _cartLines)
-            {
-                _productService.UpdateProductQuantities(line.Product, -line.Quantity);
-            }*/
+            var cart = Cart.GetCart(_session, _productService);
+            _productService.UpdateProductQuantities(cart);
             _cartLines.Clear();
 
             SaveCart();
+        }*/
+
+        public void Clear()
+        {
+            // Mettre à jour les stocks de chaque produit dans le panier
+            foreach (var cartLine in _cartLines)
+            {
+                _productService.UpdateProductQuantities(cartLine.Product.Id, cartLine.Quantity);
+            }
+
+            // Vider les lignes du panier après mise à jour des stocks
+            _cartLines.Clear();
+
+            // Sauvegarder l'état du panier (vide) dans la session
+            SaveCart();
         }
+
     }
 
     public class CartLine

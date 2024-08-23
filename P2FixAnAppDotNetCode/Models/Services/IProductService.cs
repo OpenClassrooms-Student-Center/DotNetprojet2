@@ -4,9 +4,8 @@ namespace P2FixAnAppDotNetCode.Models.Services
 {
     public interface IProductService
     {
-        //Product[] GetAllProducts();
         List<Product> GetAllProducts();
-        void UpdateProductQuantities(Cart cart);
+        void UpdateProductQuantities(int productId, int quantityToRemove);
         Product GetProductById(int id);
     }
 }
