@@ -57,7 +57,7 @@ namespace P2FixAnAppDotNetCode.Controllers
         }*/
         public IActionResult AddToCart(int id, int quantity = 1)
         {
-            var cart = Cart.GetCart(HttpContext.Session);
+            var cart = Cart.GetCart(HttpContext.Session, _productService);
             var product = _productService.GetProductById(id);
 
             if (product != null)
@@ -92,7 +92,7 @@ namespace P2FixAnAppDotNetCode.Controllers
 
         public IActionResult RemoveFromCart(int id)
         {
-            var cart = Cart.GetCart(HttpContext.Session);
+            var cart = Cart.GetCart(HttpContext.Session, _productService);
             var product = _productService.GetProductById(id);
 
             if (product != null)
@@ -111,7 +111,7 @@ namespace P2FixAnAppDotNetCode.Controllers
 
         public IActionResult ClearCart()
         {
-            var cart = Cart.GetCart(HttpContext.Session);
+            var cart = Cart.GetCart(HttpContext.Session, _productService);
             cart.Clear();
             return RedirectToAction("Index");
         }

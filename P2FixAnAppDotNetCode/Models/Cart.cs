@@ -31,7 +31,7 @@ namespace P2FixAnAppDotNetCode.Models
         {
             _session = session ?? throw new ArgumentNullException(nameof(session));
             _cartLines = new List<CartLine>();
-            _productService = productService;
+            _productService = productService ?? throw new ArgumentNullException(nameof(productService));
             LoadCart(); // Charger le panier depuis la session si déjà existant
         }
         public Cart() { }
@@ -86,10 +86,9 @@ namespace P2FixAnAppDotNetCode.Models
             return _cartLines.Sum(l => l.Product.Price * l.Quantity);
         }
 
-        // Sauvegarde du panier dans la session
         private void SaveCart()
         {
-            var cartJson = JsonConvert.SerializeObject(_cartLines); // Sérialiser les lignes de panier
+            var cartJson = JsonConvert.SerializeObject(_cartLines);
             _session.SetString("Cart", cartJson);
         }
 
@@ -125,23 +124,15 @@ namespace P2FixAnAppDotNetCode.Models
         /// <summary>
         /// Clears a the cart of all added products
         /// </summary>
-       /* public void Clear()
-        {
-            _cartLines.Clear();
-        }*/
+     
         public void Clear()
         {
-            // Parcourir toutes les lignes du panier
-            foreach (var line in _cartLines)
+            /*foreach (var line in _cartLines)
             {
-                // Diminuer le stock du produit en fonction de la quantité dans le panier
-                _productService.UpdateStock(line.Product, -line.Quantity);
-            }
-
-            // Ensuite, vider le panier
+                _productService.UpdateProductQuantities(line.Product, -line.Quantity);
+            }*/
             _cartLines.Clear();
 
-            // Sauvegarder le panier vide dans la session
             SaveCart();
         }
     }

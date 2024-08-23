@@ -13,11 +13,13 @@ namespace P2FixAnAppDotNetCode.Controllers
         private readonly ICart _cart;
         private readonly IOrderService _orderService;
         private readonly IStringLocalizer<OrderController> _localizer;
+        private readonly IProductService _productService;
 
-        public OrderController(ICart pCart, IOrderService service, IStringLocalizer<OrderController> localizer)
+        public OrderController(ICart pCart, IProductService productService, IOrderService service, IStringLocalizer<OrderController> localizer)
         {
             _cart = pCart ?? throw new ArgumentNullException(nameof(pCart));
             //_cartService = cartService;
+            _productService = productService ?? throw new ArgumentNullException(nameof(productService));
             _orderService = service;
             _localizer = localizer;
         }
@@ -30,7 +32,7 @@ namespace P2FixAnAppDotNetCode.Controllers
         {
             try
             {
-                var cart = Cart.GetCart(HttpContext.Session);
+                var cart = Cart.GetCart(HttpContext.Session, _productService);
 
                 if (!cart.Lines.Any())
                 {
@@ -93,7 +95,7 @@ namespace P2FixAnAppDotNetCode.Controllers
         [HttpPost]
         public IActionResult Checkout(Order order)
         {
-            var cart = Cart.GetCart(HttpContext.Session);
+            var cart = Cart.GetCart(HttpContext.Session, _productService);
 
             if (ModelState.IsValid)
             {
@@ -125,7 +127,7 @@ namespace P2FixAnAppDotNetCode.Controllers
         public ViewResult Completed()
         {
             // Utilisation de la méthode GetCart pour récupérer le panier depuis la session
-            var cart = Cart.GetCart(HttpContext.Session);
+            var cart = Cart.GetCart(HttpContext.Session, _productService);
 
             if (cart != null)
             {

@@ -39,7 +39,8 @@ namespace P2FixAnAppDotNetCode
             services.AddScoped<ICart>(sp =>
             {
                 var session = sp.GetService<IHttpContextAccessor>().HttpContext.Session;
-                return Cart.GetCart(session); // Initialiser Cart avec la session
+                var productService = sp.GetService<IProductService>();
+                return Cart.GetCart(session, productService); // Initialiser Cart avec la session
             });
 
             services.AddMvc()
