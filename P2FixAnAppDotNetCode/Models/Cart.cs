@@ -110,30 +110,17 @@ namespace P2FixAnAppDotNetCode.Models
         /// Clears a the cart of all added products
         /// </summary>
 
-        /*public void Clear()
-        {
-            var cart = Cart.GetCart(_session, _productService);
-            _productService.UpdateProductQuantities(cart);
-            _cartLines.Clear();
-
-            SaveCart();
-        }*/
-
         public void Clear()
         {
-            // Mettre à jour les stocks de chaque produit dans le panier
             foreach (var cartLine in _cartLines)
             {
                 _productService.UpdateProductQuantities(cartLine.Product.Id, cartLine.Quantity);
             }
 
-            // Vider les lignes du panier après mise à jour des stocks
             _cartLines.Clear();
 
-            // Sauvegarder l'état du panier (vide) dans la session
             SaveCart();
         }
-
     }
 
     public class CartLine
