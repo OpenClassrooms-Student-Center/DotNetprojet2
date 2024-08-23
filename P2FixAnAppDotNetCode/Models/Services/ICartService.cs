@@ -1,20 +1,12 @@
-﻿
-using Microsoft.AspNetCore.Http;
-
-namespace P2FixAnAppDotNetCode.Models
+﻿namespace P2FixAnAppDotNetCode.Models.Services
 {
-    public interface ICart
+    public interface ICartService
     {
         void AddItem(Product product, int quantity);
-
         void RemoveLine(Product product);
-
         void Clear();
-
         double GetTotalValue();
-
         double GetAverageValue();
-        //Cart GetCart();
-        //Cart GetCart(ISession session);
+        Cart GetCart();
     }
 }

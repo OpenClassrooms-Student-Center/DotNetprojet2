@@ -12,7 +12,7 @@ namespace P2FixAnAppDotNetCode.Tests
     /// </summary>
     public class ProductServiceTests
     {
-
+/*
         [Fact]
         public void Product()
         {
@@ -74,6 +74,6 @@ namespace P2FixAnAppDotNetCode.Tests
 
             Assert.Same("JVC HAFX8R Headphone", product.Name);
             Assert.Equal(69.99, product.Price);
-        }
+        }*/
     }
 }

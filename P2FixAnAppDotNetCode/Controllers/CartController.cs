@@ -8,36 +8,67 @@ namespace P2FixAnAppDotNetCode.Controllers
     public class CartController : Controller
     {
         private readonly ICart _cart;
+        //private readonly ICartService _cartService;
         private readonly IProductService _productService;
 
-        public CartController(ICart pCart, IProductService productService)
+        public CartController(ICart cart ,IProductService productService)
         {
-            _cart = pCart;
+            _cart = cart;
+            //_cartService = cartService;
             _productService = productService;
         }
 
         public ViewResult Index()
         {
-            return View(_cart as Cart);
+            var cart = Cart.GetCart(HttpContext.Session);
+            return View(cart);
         }
 
-        [HttpPost]
-        public RedirectToActionResult AddToCart(int id)
+        /* public ViewResult Index()
+         {
+             var cart = _cart.GetCart();
+             return View(cart);
+         }*/
+
+        /* [HttpPost]
+         public RedirectToActionResult AddToCart(int id)
+         {
+             Product product = _productService.GetProductById(id);
+
+             if (product != null)
+             {
+                 _cart.AddItem(product, 1);
+                 return RedirectToAction("Index");
+             }
+             else
+             {
+                 return RedirectToAction("Index", "Product");
+             }
+         }*/
+
+        /*public IActionResult AddToCart(int id, int quantity = 1)
         {
-            Product product = _productService.GetProductById(id);
+            var product = _productService.GetProductById(id);
+            if (product != null)
+            {
+                _cart.AddItem(product, quantity);
+            }
+            return RedirectToAction("Index");
+        }*/
+        public IActionResult AddToCart(int id, int quantity = 1)
+        {
+            var cart = Cart.GetCart(HttpContext.Session);
+            var product = _productService.GetProductById(id);
 
             if (product != null)
             {
-                _cart.AddItem(product, 1);
-                return RedirectToAction("Index");
+                cart.AddItem(product, quantity);
             }
-            else
-            {
-                return RedirectToAction("Index", "Product");
-            }
+
+            return RedirectToAction("Index");
         }
 
-        public RedirectToActionResult RemoveFromCart(int id)
+        /*public RedirectToActionResult RemoveFromCart(int id)
         {
             Product product = _productService.GetAllProducts()
                 .FirstOrDefault(p => p.Id == id);
@@ -46,6 +77,42 @@ namespace P2FixAnAppDotNetCode.Controllers
             {
                 _cart.RemoveLine(product);
             }
+            return RedirectToAction("Index");
+        }*/
+
+        /* public IActionResult RemoveFromCart(int id)
+         {
+             var product = _productService.GetProductById(id);
+             if (product != null)
+             {
+                 _cart.RemoveLine(product);
+             }
+             return RedirectToAction("Index");
+         }*/
+
+        public IActionResult RemoveFromCart(int id)
+        {
+            var cart = Cart.GetCart(HttpContext.Session);
+            var product = _productService.GetProductById(id);
+
+            if (product != null)
+            {
+                cart.RemoveLine(product);
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        /* public IActionResult ClearCart()
+         {
+             _cart.Clear();
+             return RedirectToAction("Index");
+         }*/
+
+        public IActionResult ClearCart()
+        {
+            var cart = Cart.GetCart(HttpContext.Session);
+            cart.Clear();
             return RedirectToAction("Index");
         }
     }

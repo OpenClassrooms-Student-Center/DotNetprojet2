@@ -26,16 +26,17 @@ namespace P2FixAnAppDotNetCode.Models.Services
         {
             order.Date = DateTime.Now;
             _repository.Save(order);
-            UpdateInventory();
+            _productService.UpdateProductQuantities(_cart as Cart);
+            _cart.Clear();
         }
 
         /// <summary>
         /// Update the product quantities inventory and clears the cart
         /// </summary>
-        private void UpdateInventory()
+       /* private void UpdateInventory()
         {
             _productService.UpdateProductQuantities(_cart as Cart);
             _cart.Clear();
-        }
+        }*/
     }
 }
