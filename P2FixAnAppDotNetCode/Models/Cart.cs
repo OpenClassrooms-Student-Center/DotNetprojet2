@@ -12,17 +12,7 @@ namespace P2FixAnAppDotNetCode.Models
     /// </summary>
     public class Cart : ICart
     {
-        //private readonly List<CartLine> _cartLines = new List<CartLine>();
         private List<CartLine> _cartLines;
-
-        /// <summary>
-        /// Return the actual cartline list
-        /// </summary>
-        /// <returns></returns>
-        /*private List<CartLine> GetCartLineList()
-        {
-            return new List<CartLine>();
-        }*/
 
         private ISession _session;
         private readonly IProductService _productService;
