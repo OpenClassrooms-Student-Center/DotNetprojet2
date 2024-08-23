@@ -93,13 +93,6 @@ namespace P2FixAnAppDotNetCode.Models
             _session.SetString("Cart", cartJson);
         }
 
-        // Récupérer le panier de la session
-        /* public static Cart GetCart(ISession session)
-         {
-             var cartJson = session.GetString("Cart");
-             return cartJson == null ? new Cart(session) : JsonConvert.DeserializeObject<Cart>(cartJson);
-         }*/
-
         public static Cart GetCart(ISession session, IProductService productService)
         {
             return new Cart(session, productService);
