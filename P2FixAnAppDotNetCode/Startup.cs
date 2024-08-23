@@ -35,7 +35,6 @@ namespace P2FixAnAppDotNetCode
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddMemoryCache();
             services.AddSession();
-            //services.AddScoped<ICart>(sp => Cart.GetCart(sp.GetService<IHttpContextAccessor>().HttpContext.Session));
             services.AddScoped<ICart>(sp =>
             {
                 var session = sp.GetService<IHttpContextAccessor>().HttpContext.Session;

@@ -20,7 +20,7 @@ namespace P2FixAnAppDotNetCode.Controllers
 
         public ViewResult Index()
         {
-            var cart = Cart.GetCart(HttpContext.Session);
+            var cart = Cart.GetCart(HttpContext.Session, _productService);
             return View(cart);
         }
 
@@ -80,16 +80,6 @@ namespace P2FixAnAppDotNetCode.Controllers
             return RedirectToAction("Index");
         }*/
 
-        /* public IActionResult RemoveFromCart(int id)
-         {
-             var product = _productService.GetProductById(id);
-             if (product != null)
-             {
-                 _cart.RemoveLine(product);
-             }
-             return RedirectToAction("Index");
-         }*/
-
         public IActionResult RemoveFromCart(int id)
         {
             var cart = Cart.GetCart(HttpContext.Session, _productService);
@@ -102,12 +92,6 @@ namespace P2FixAnAppDotNetCode.Controllers
 
             return RedirectToAction("Index");
         }
-
-        /* public IActionResult ClearCart()
-         {
-             _cart.Clear();
-             return RedirectToAction("Index");
-         }*/
 
         public IActionResult ClearCart()
         {
