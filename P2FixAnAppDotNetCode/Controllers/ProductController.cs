@@ -26,29 +26,6 @@ namespace P2FixAnAppDotNetCode.Controllers
             return View(products);
         }
 
-        /* public IActionResult Index()
-         {
-             // Définir la clé de cache pour les produits
-             string cacheKey = "productList";
-
-             // Tenter de récupérer les produits depuis le cache
-             if (!_memoryCache.TryGetValue(cacheKey, out var products))
-             {
-                 // Si les produits ne sont pas en cache, les récupérer depuis le service
-                 products = _productService.GetAllProducts();
-
-                 // Configurer les options de cache (optionnel)
-                 var cacheOptions = new MemoryCacheEntryOptions()
-                     .SetSlidingExpiration(TimeSpan.FromMinutes(60))  // Expiration après 60 minutes d'inactivité
-                     .SetAbsoluteExpiration(TimeSpan.FromHours(2));   // Expiration après 2 heures
-
-                 // Mettre les produits en cache
-                 _memoryCache.Set(cacheKey, products, cacheOptions);
-             }
-
-             return View(products);
-         }*/
-
         public IActionResult Details(int id)
         {
             var product = _productService.GetProductById(id);

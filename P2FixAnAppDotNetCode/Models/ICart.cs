@@ -14,7 +14,5 @@ namespace P2FixAnAppDotNetCode.Models
         double GetTotalValue();
 
         double GetAverageValue();
-        //Cart GetCart();
-        //Cart GetCart(ISession session);
     }
 }
