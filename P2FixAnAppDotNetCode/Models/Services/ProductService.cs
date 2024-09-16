@@ -50,7 +50,11 @@ namespace P2FixAnAppDotNetCode.Models.Services
         public void UpdateProductQuantities(int productId, int quantityToRemove)
         {
             _productRepository.UpdateProductStocks(productId, quantityToRemove);
-            _memoryCache.Remove("productList");
+            _memoryCache.Remove("AllProducts");
+
+            var updatedProductList = _productRepository.GetAllProducts().ToList();
+            _memoryCache.Set("AllProducts", updatedProductList);
         }
+
     }
 }
