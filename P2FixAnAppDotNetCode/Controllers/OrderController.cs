@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using P2FixAnAppDotNetCode.Models;
@@ -11,38 +12,66 @@ namespace P2FixAnAppDotNetCode.Controllers
         private readonly ICart _cart;
         private readonly IOrderService _orderService;
         private readonly IStringLocalizer<OrderController> _localizer;
+        private readonly IProductService _productService;
 
-        public OrderController(ICart pCart, IOrderService service, IStringLocalizer<OrderController> localizer)
+        public OrderController(ICart pCart, IProductService productService, IOrderService service, IStringLocalizer<OrderController> localizer)
         {
-            _cart = pCart;
+            _cart = pCart ?? throw new ArgumentNullException(nameof(pCart));
+            _productService = productService ?? throw new ArgumentNullException(nameof(productService));
             _orderService = service;
             _localizer = localizer;
         }
 
-        public ViewResult Index() => View(new Order());
-
-        [HttpPost]
-        public IActionResult Index(Order order)
+        /// <summary>
+        /// Affiche le formulaire de commande.
+        /// </summary>
+        public IActionResult Checkout()
         {
-            if (!((Cart) _cart).Lines.Any())
+            try
             {
-                ModelState.AddModelError("", _localizer["CartEmpty"]);
+                var cart = Cart.GetCart(HttpContext.Session, _productService);
+
+                if (!cart.Lines.Any())
+                {
+                    ModelState.AddModelError("", _localizer["CartEmpty"]);
+                    return RedirectToAction("Index", "Cart");
+                }
+
+                return View(new Order());
             }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal server error: " + ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Traite la commande une fois le formulaire soumis.
+        /// </summary>
+        [HttpPost]
+        public IActionResult Checkout(Order order)
+        {
+            var cart = Cart.GetCart(HttpContext.Session, _productService);
+
             if (ModelState.IsValid)
             {
-                order.Lines = (_cart as Cart)?.Lines.ToArray();
+                order.Lines = cart.Lines.ToArray();
                 _orderService.SaveOrder(order);
-                return RedirectToAction(nameof(Completed));
+                return RedirectToAction("Completed");
             }
-            else
-            {
-                return View(order);
-            }
+
+            return View(order);
         }
 
         public ViewResult Completed()
         {
-            _cart.Clear();
+            var cart = Cart.GetCart(HttpContext.Session, _productService);
+
+            if (cart != null)
+            {
+                cart.Clear();
+            }
+
             return View();
         }
     }

@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace P2FixAnAppDotNetCode.Models
 {
@@ -12,18 +12,19 @@ namespace P2FixAnAppDotNetCode.Models
         [BindNever]
         public ICollection<CartLine> Lines { get; set; }
 
-        [Required(ErrorMessage = "ErrorMissingName")]
+        [Required(ErrorMessage = "Le nom est obligatoire")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "ErrorMissingAddress")]
+        [Required(ErrorMessage = "L'adresse est obligatoire")]
         public string Address { get; set; }
 
-        [Required(ErrorMessage = "ErrorMissingCity")]
+        [Required(ErrorMessage = "La ville est obligatoire")]
         public string City { get; set; }
 
+        [Required(ErrorMessage = "Zip code obligatoire")]
         public string Zip { get; set; }
 
-        [Required(ErrorMessage = "ErrorMissingCountry")]
+        [Required(ErrorMessage = "Le pays est obligatoire")]
         public string Country { get; set; }
 
         [BindNever]

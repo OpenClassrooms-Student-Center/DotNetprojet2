@@ -2,6 +2,7 @@
 using System.Globalization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Configuration;
@@ -26,14 +27,21 @@ namespace P2FixAnAppDotNetCode
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddLocalization(opts => { opts.ResourcesPath = "Resources"; });
-            services.AddSingleton<ICart, Cart>();
+            services.AddScoped<ICart, Cart>();
             services.AddSingleton<ILanguageService, LanguageService>();
-            services.AddTransient<IProductService, ProductService>();
-            services.AddTransient<IProductRepository, ProductRepository>();
-            services.AddTransient<IOrderService, OrderService>();
-            services.AddTransient<IOrderRepository, OrderRepository>();
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddMemoryCache();
             services.AddSession();
+            services.AddScoped<ICart>(sp =>
+            {
+                var session = sp.GetService<IHttpContextAccessor>().HttpContext.Session;
+                var productService = sp.GetService<IProductService>();
+                return Cart.GetCart(session, productService);
+            });
+
             services.AddMvc()
                 .AddViewLocalization(
                     LanguageViewLocationExpanderFormat.Suffix,
@@ -47,6 +55,7 @@ namespace P2FixAnAppDotNetCode
                     new CultureInfo("en-GB"),
                     new CultureInfo("en-US"),
                     new CultureInfo("en"),
+                    new CultureInfo("es-ES"),
                     new CultureInfo("fr-FR"),
                     new CultureInfo("fr"),
                 };

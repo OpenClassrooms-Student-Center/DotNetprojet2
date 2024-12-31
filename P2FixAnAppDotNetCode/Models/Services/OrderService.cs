@@ -11,7 +11,6 @@ namespace P2FixAnAppDotNetCode.Models.Services
        private readonly ICart _cart;
        private readonly IOrderRepository _repository;
        private readonly IProductService _productService;
-
         public OrderService(ICart cart, IOrderRepository orderRepo, IProductService productService)
         {
             _repository = orderRepo;
@@ -26,15 +25,11 @@ namespace P2FixAnAppDotNetCode.Models.Services
         {
             order.Date = DateTime.Now;
             _repository.Save(order);
-            UpdateInventory();
-        }
-
-        /// <summary>
-        /// Update the product quantities inventory and clears the cart
-        /// </summary>
-        private void UpdateInventory()
-        {
-            _productService.UpdateProductQuantities(_cart as Cart);
+            
+            foreach (var cartLine in (_cart as Cart).Lines)
+            {
+                _productService.UpdateProductQuantities(cartLine.Product.Id, cartLine.Quantity);
+            }
             _cart.Clear();
         }
     }

@@ -13,16 +13,23 @@ namespace P2FixAnAppDotNetCode.Controllers
             _languageService = languageService;
         }
 
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult ChangeUiLanguage(LanguageViewModel model, string returnUrl)
+        public IActionResult ChangeUiLanguage(LanguageViewModel model)
         {
-            if (model.Language != null)
+            if (ModelState.IsValid)
             {
-                _languageService.ChangeUiLanguage(HttpContext, model.Language);
+                if (!string.IsNullOrEmpty(model.Language))
+                {
+                    _languageService.ChangeUiLanguage(HttpContext, model.Language);
+                }
+
+                string returnUrl = !string.IsNullOrEmpty(model.ReturnUrl) ? model.ReturnUrl : "/";
+                return Redirect(returnUrl);
             }
 
-            return Redirect(returnUrl);
+            return View(model);
         }
     }
 }

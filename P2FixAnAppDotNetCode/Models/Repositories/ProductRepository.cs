@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace P2FixAnAppDotNetCode.Models.Repositories
@@ -43,11 +44,21 @@ namespace P2FixAnAppDotNetCode.Models.Repositories
         /// </summary>
         public void UpdateProductStocks(int productId, int quantityToRemove)
         {
-            Product product = _products.First(p => p.Id == productId);
-            product.Stock = product.Stock - quantityToRemove;
+            Product product = _products.FirstOrDefault(p => p.Id == productId);
+            if (product != null)
+            {
+                if (quantityToRemove > 0)
+                {
+                    product.Stock -= quantityToRemove;
+                    Console.WriteLine($"Product {product.Name} stock updated to {product.Stock}");
 
-            if (product.Stock == 0)
-                _products.Remove(product);
+                    if (product.Stock <= 0)
+                    {
+                        _products.Remove(product);
+                        Console.WriteLine($"Product {product.Name} removed from inventory");
+                    }
+                }
+            }
         }
     }
 }

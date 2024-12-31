@@ -1,4 +1,7 @@
-﻿using P2FixAnAppDotNetCode.Models.Repositories;
+﻿using Microsoft.Extensions.Caching.Memory;
+using P2FixAnAppDotNetCode.Models.Repositories;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace P2FixAnAppDotNetCode.Models.Services
 {
@@ -9,21 +12,28 @@ namespace P2FixAnAppDotNetCode.Models.Services
     {
         private readonly IProductRepository _productRepository;
         private readonly IOrderRepository _orderRepository;
+        private readonly IMemoryCache _memoryCache;
 
-        public ProductService(IProductRepository productRepository, IOrderRepository orderRepository)
+        public ProductService(IProductRepository productRepository, IOrderRepository orderRepository, IMemoryCache memoryCache)
         {
             _productRepository = productRepository;
             _orderRepository = orderRepository;
+            _memoryCache = memoryCache;
         }
 
         /// <summary>
         /// Get all product from the inventory
         /// </summary>
-        public Product[] GetAllProducts()
+        public List<Product> GetAllProducts()
         {
-            // TODO change the return type from array to List<T> and propagate the change
-            // throughout the application
-            return _productRepository.GetAllProducts();
+            if (!_memoryCache.TryGetValue("AllProducts", out List<Product> products))
+            {
+                var productArray = _productRepository.GetAllProducts();
+                products = productArray.ToList();
+                _memoryCache.Set("AllProducts", products);
+            }
+
+            return products;
         }
 
         /// <summary>
@@ -31,17 +41,20 @@ namespace P2FixAnAppDotNetCode.Models.Services
         /// </summary>
         public Product GetProductById(int id)
         {
-            // TODO implement the method
-            return null;
+            return GetAllProducts().FirstOrDefault(p => p.Id == id);
         }
 
         /// <summary>
         /// Update the quantities left for each product in the inventory depending of ordered the quantities
         /// </summary>
-        public void UpdateProductQuantities(Cart cart)
+        public void UpdateProductQuantities(int productId, int quantityToRemove)
         {
-            // TODO implement the method
-            // update product inventory by using _productRepository.UpdateProductStocks() method.
+            _productRepository.UpdateProductStocks(productId, quantityToRemove);
+            _memoryCache.Remove("AllProducts");
+
+            var updatedProductList = _productRepository.GetAllProducts().ToList();
+            _memoryCache.Set("AllProducts", updatedProductList);
         }
+
     }
 }

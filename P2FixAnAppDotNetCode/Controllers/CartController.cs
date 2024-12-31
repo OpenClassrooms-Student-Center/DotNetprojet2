@@ -10,42 +10,48 @@ namespace P2FixAnAppDotNetCode.Controllers
         private readonly ICart _cart;
         private readonly IProductService _productService;
 
-        public CartController(ICart pCart, IProductService productService)
+        public CartController(ICart cart ,IProductService productService)
         {
-            _cart = pCart;
+            _cart = cart;
             _productService = productService;
         }
 
         public ViewResult Index()
         {
-            return View(_cart as Cart);
+            var cart = Cart.GetCart(HttpContext.Session, _productService);
+            return View(cart);
         }
-
-        [HttpPost]
-        public RedirectToActionResult AddToCart(int id)
+        
+        public IActionResult AddToCart(int id, int quantity = 1)
         {
-            Product product = _productService.GetProductById(id);
+            var cart = Cart.GetCart(HttpContext.Session, _productService);
+            var product = _productService.GetProductById(id);
 
             if (product != null)
             {
-                _cart.AddItem(product, 1);
-                return RedirectToAction("Index");
+                cart.AddItem(product, quantity);
             }
-            else
-            {
-                return RedirectToAction("Index", "Product");
-            }
+
+            return RedirectToAction("Index");
         }
 
-        public RedirectToActionResult RemoveFromCart(int id)
+        public IActionResult RemoveFromCart(int id)
         {
-            Product product = _productService.GetAllProducts()
-                .FirstOrDefault(p => p.Id == id);
+            var cart = Cart.GetCart(HttpContext.Session, _productService);
+            var product = _productService.GetProductById(id);
 
             if (product != null)
             {
-                _cart.RemoveLine(product);
+                cart.RemoveLine(product);
             }
+
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult ClearCart()
+        {
+            var cart = Cart.GetCart(HttpContext.Session, _productService);
+            cart.Clear();
             return RedirectToAction("Index");
         }
     }

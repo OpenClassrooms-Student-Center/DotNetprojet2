@@ -1,4 +1,4 @@
-﻿@model P2FixAnAppDotNetCode.Models.Cart
+﻿@model P2FixAnAppDotNetCode.Models.Cart 
 
 <h2>@Localizer["YourCart"]</h2>
 <table class="table table-bordered table-striped">
@@ -49,5 +49,5 @@
 </table>
 <div class="text-center">
     <a class="btn btn-primary" asp-action="Index" asp-controller="Product">@Localizer["ContinueShopping"]</a>
-    <a class="btn btn-primary" asp-action="Index" asp-controller="Order">@Localizer["Checkout"]</a>
+    <a class="btn btn-primary" asp-action="Checkout" asp-controller="Order">@Localizer["Checkout"]</a>
 </div>
